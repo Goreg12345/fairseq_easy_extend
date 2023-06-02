@@ -6,6 +6,9 @@
 """
 
 """
+import os
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
 from fairseq_easy_extend_cli import hydra_train
 

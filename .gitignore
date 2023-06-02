@@ -3,3 +3,5 @@ __pycache__/
 .idea/
 
 *.txt
+/checkpoint_best.pt
+/iwslt14.tokenized.de-en/
