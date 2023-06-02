@@ -145,6 +145,8 @@ class RLCriterion(FairseqCriterion):
         ####HERE calculate metric###
         with torch.no_grad():
             reward = torch.zeros_like(masks, dtype=torch.float32)
+            print('inclusive padding tokens', self.decode(targets[0]))
+            print('exclusive padding tokens', self.decode(targets[0, masks[0]]))
             for i in range(bsz):
                 candidate = self.decode(sample_idx[i, masks[i]])#.replace('<pad>', '')
                 target = self.decode(targets[i, masks[i]])#.replace('<pad>', '')
